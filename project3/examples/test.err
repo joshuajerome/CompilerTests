@@ -1,0 +1,15 @@
+line 5: conflicting types for 'a'
+line 7: conflicting types for 'x'
+line 10: conflicting types for 'g'
+line 11: conflicting types for 'g'
+line 16: conflicting types for 'g'
+line 19: conflicting types for 'f'
+line 41: conflicting types for 'a_int'
+line 52: redefinition of 'add_int_char_2'
+line 55: redefinition of 'add_int_char_2'
+line 58: redefinition of 'add_int_char_2'
+line 61: redefinition of 'add_int_char_2'
+line 65: redeclaration of 'x'
+line 66: redeclaration of 'x'
+line 69: 'printf' undeclared
+line 71: 'printf' undeclared

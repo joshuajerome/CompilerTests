@@ -15,7 +15,7 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-rm -rf $WORKDIR && mkdir -m 700 $WORKDIR && mkdir $WORKDIR/my_examples || die
+rm -rf $WORKDIR && mkdir -m 700 $WORKDIR && mkdir $WORKDIR/examples || die
 
 echo "Checking environment ..."
 hostname -f | grep 'linux.*.engr.scu.edu' >/dev/null ||
@@ -23,7 +23,7 @@ hostname -f | grep 'linux.*.engr.scu.edu' >/dev/null ||
 
 echo "Checking submission ..."
 test -r $1 && test `wc -c < $1` -gt 1000000 \
-    && echo "Submission too large" 1>&2
+    && echo "Submission too large" 1>&2 && die
 
 echo "Extracting submission ..."
 tar -C $WORKDIR -xf $1 || die
@@ -35,13 +35,13 @@ echo "Extracting examples ..."
 tar -C $WORKDIR -xf $2 || die
 
 echo "Running examples ..."
-exec 3> MYCHECKSUB.diff
+exec 3> CHECKSUB.diff
 
-(cd $WORKDIR/my_examples && for FILE in *.c; do
+(cd $WORKDIR/examples && for FILE in *.c; do
     echo -n "$FILE ... "
     echo "$FILE ..." 1>&3
-    (ulimit -t 1; ../phase3/scc) < $FILE 2>/dev/null |
-	cmp - `basename $FILE .c`.out 1>&3 2>/dev/null && echo ok || echo failed
+    (ulimit -t 1; ../phase3/scc) < $FILE 2>&1 >/dev/null |
+	cmp - `basename $FILE .c`.err 1>&3 2>/dev/null && echo ok || echo failed
 done)
 
 rm -rf $WORKDIR
