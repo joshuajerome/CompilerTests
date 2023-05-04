@@ -7,40 +7,22 @@ git clone git@github.com/joshuajerome/CompilerTests
 ```
 
 ## Running Tests
-1) Put your phase3.tar file into CompilerTests folder.
-   Suppose phase3.tar exists in ../coen175/project3/ , then you can do this with the following command:
+1) Put your phasen.tar file into CompilerTests/projectn folder.
+   Suppose phasen.tar exists in ../coen175/projectn/ , then you can do this with the following command:
 
    ```
-   scp ../coen175/project3/phase3.tar
+   scp ../coen175/projectn/phasen.tar phasen.tar
    ```
    
-2) Run MYCHECKSUB.sh:
+2) Run CHECKSUB.sh:
    
    ```
-   ./MYCHECKSUB.sh phase3.tar my_examples.tar
+   ./CHECKSUB.sh phasen.tar examples.tar
    ```
 
 ## Adding Test Files
 Within CompilerTests folder...
 
-1) *cd* my_examples
-2) Add a *.c* file and a *.out* file to my_examples.
-   You can either create your own expected *.out* file or do the following:
-   
-   a)  
-   ```
-   tar xvf phase3.tar phase3
-   ```
-   b) 
-   ```
-   cd phase3
-   ```
-   c)
-   ``` 
-   make clean all
-   ```
-   d) 
-   ```
-   ./scc <../my_examples/newfilename.c> ../my_examples/newfilename.out
-   ```
-   This will create an output file with code that you wrote.
+1) *cd* examples
+2) Add .c file and output file to examples.
+3) Push changes
