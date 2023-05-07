@@ -1,0 +1,13 @@
+line 5: conflicting types for 'b'
+line 10: conflicting types for 'b'
+line 11: conflicting types for 'c'
+line 12: conflicting types for 'd'
+line 13: conflicting types for 'e'
+line 18: conflicting types for 'b'
+line 20: conflicting types for 'p'
+line 21: conflicting types for 'q'
+line 28: conflicting types for 'a'
+line 32: redeclaration of 'y'
+line 35: 'z' undeclared
+line 39: 'w' undeclared
+line 42: conflicting types for 'a'
