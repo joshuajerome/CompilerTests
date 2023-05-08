@@ -11,3 +11,4 @@ line 32: redeclaration of 'y'
 line 35: 'z' undeclared
 line 39: 'w' undeclared
 line 42: conflicting types for 'a'
+line 43: redefinition of 'f'
